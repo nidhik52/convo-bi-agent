@@ -1,4 +1,4 @@
-﻿# Skylark BI Agent
+﻿# Convo BI Agent
 
 A conversational Business Intelligence agent for Monday.com — ask plain-English questions and get live, formatted answers backed by real board data.
 
@@ -138,7 +138,7 @@ Creates both boards, imports all rows, and prints the IDs to add to `.env`. Take
 ## File Structure
 
 ```
-skylark-bi-agent/
+convo-bi-agent/
 ├── mcp_server.py        # FastMCP server — 8 Monday.com tools
 ├── tools.py             # Tool implementations (live Monday.com queries)
 ├── monday_client.py     # GraphQL API client with pagination + rate-limit retry
@@ -193,7 +193,7 @@ CMD ["python", "-m", "chainlit", "run", "app.py", "--host", "0.0.0.0", "--port",
 ```
 
 ```bash
-docker build -t skylark-bi-agent .
+docker build -t convo-bi-agent .
 docker run -p 8000:8000 --env-file .env skylark-bi-agent
 ```
 
@@ -344,7 +344,7 @@ Creates **Deal Funnel** and **Work Order Tracker** boards, imports ~520 rows, an
 ## File Structure
 
 ```
-skylark-bi-agent/
+convo-bi-agent/
 |-- mcp_server.py                # * MCP server -- the main entry point
 |-- tools.py                     # All 8 data-fetching functions
 |-- monday_client.py             # Monday.com GraphQL API client
@@ -364,7 +364,7 @@ skylark-bi-agent/
 ```bash
 # Init (first time)
 git init
-git remote add origin https://github.com/yourname/skylark-bi-agent.git
+git remote add origin https://github.com/yourname/convo-bi-agent.git
 
 # .env is already in .gitignore -- safe to push
 git add .
