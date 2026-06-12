@@ -52,8 +52,8 @@ Browser → Chainlit UI (app.py)
 ### 2. Install
 
 ```bash
-git clone https://github.com/yourname/skylark-bi-agent.git
-cd skylark-bi-agent
+git clone https://github.com/yourname/convo-bi-agent.git
+cd convo-bi-agent
 pip install -r requirements.txt
 ```
 
@@ -106,9 +106,9 @@ The MCP server can be plugged directly into any MCP-compatible client — no Cha
 ```json
 {
   "mcpServers": {
-    "skylark-bi": {
+    "convo-bi": {
       "command": "python",
-      "args": ["C:/path/to/skylark-bi-agent/mcp_server.py"],
+      "args": ["C:/path/to/convo-bi-agent/mcp_server.py"],
       "env": {
         "MONDAY_API_KEY": "...",
         "DEALS_BOARD_ID": "5026904002",
@@ -194,7 +194,7 @@ CMD ["python", "-m", "chainlit", "run", "app.py", "--host", "0.0.0.0", "--port",
 
 ```bash
 docker build -t convo-bi-agent .
-docker run -p 8000:8000 --env-file .env skylark-bi-agent
+docker run -p 8000:8000 --env-file .env convo-bi-agent
 ```
 
 ---
@@ -265,9 +265,9 @@ Edit `%APPDATA%\Claude\claude_desktop_config.json` (Windows) or `~/Library/Appli
 ```json
 {
   "mcpServers": {
-    "skylark-bi": {
+    "convo-bi": {
       "command": "python",
-      "args": ["C:/path/to/skylark-bi-agent/mcp_server.py"],
+      "args": ["C:/path/to/convo-bi-agent/mcp_server.py"],
       "env": {
         "MONDAY_API_KEY": "your_monday_token",
         "DEALS_BOARD_ID": "5026904002",
@@ -287,9 +287,9 @@ Open `Cursor Settings -> MCP` and add:
 
 ```json
 {
-  "skylark-bi": {
+  "convo-bi": {
     "command": "python",
-    "args": ["C:/path/to/skylark-bi-agent/mcp_server.py"],
+    "args": ["C:/path/to/convo-bi-agent/mcp_server.py"],
     "env": {
       "MONDAY_API_KEY": "your_monday_token",
       "DEALS_BOARD_ID": "5026904002",
@@ -316,7 +316,7 @@ Open http://localhost:8000. Uses the same MCP server under the hood.
 
 ## One-time Board Import
 
-If the Monday.com boards do not exist yet, place the Excel files in `skylark-bi-agent/` and run:
+If the Monday.com boards do not exist yet, place the Excel files in `convo-bi-agent/` and run:
 
 ```bash
 python import_boards.py
